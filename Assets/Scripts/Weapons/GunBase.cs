@@ -3,7 +3,7 @@
 namespace Br.Weapon
 {
     [System.Serializable]
-    public class GunBase : MonoBehaviour
+    public class GunBase : ItemBase
     {
         /// <summary>
         /// Quantidade de Balas que podem ser carregadas
