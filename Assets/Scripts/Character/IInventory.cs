@@ -1,5 +1,7 @@
-﻿public interface IInventory
+﻿using UnityEngine;
+
+public interface IInventory
 {
-    void AddInventory();
+    void AddInventory(GameObject Item);
     void RemoveInventory();
 }

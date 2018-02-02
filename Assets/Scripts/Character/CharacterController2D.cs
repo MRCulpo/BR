@@ -37,10 +37,7 @@ public class CharacterController2D : MonoBehaviour
 
 
         m_CharacterBodyScale = m_CharacterBody.localScale;
-        m_CharacterWeaponScale = m_CharacterWeapon.localScale;
-
-
-        currentGun = m_CharacterWeapon.GetChild(0).GetComponent<IGun>();
+        m_CharacterWeaponScale = CharacterWeapon.localScale;
     }
 
     void Update()
@@ -86,7 +83,34 @@ public class CharacterController2D : MonoBehaviour
 
         if(Input.GetMouseButton(0))
         {
-            currentGun.Shoot();
+            if(currentGun != null)
+                currentGun.Shoot();
+        }
+    }
+
+    public Transform CharacterWeapon
+    {
+        get
+        {
+            return m_CharacterWeapon;
+        }
+
+        set
+        {
+            m_CharacterWeapon = value;
+        }
+    }
+
+    public IGun CurrentGun
+    {
+        get
+        {
+            return currentGun;
+        }
+
+        set
+        {
+            currentGun = value;
         }
     }
 }
